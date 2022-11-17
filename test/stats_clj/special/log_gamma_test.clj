@@ -1,7 +1,10 @@
 (ns stats-clj.special.log-gamma-test
   (:require [clojure.test :refer :all]
-            [stats-clj.special.log-gamma]))
+            [stats-clj.special :refer [log-gamma]]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 1 1))))
+(deftest log-gamma-test
+  (testing "log-gamma(0) = inf"
+    (is (= ##Inf (log-gamma 0))))
+  (testing "log-gamma(n) = log[(n - 1)!]"
+    (is (= [0.0 -4.440892098500626E-16 0.6931471805599441 1.791759469228055 3.1780538303479453]
+           (map log-gamma [1 2 3 4 5]) ))))
