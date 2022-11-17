@@ -10,7 +10,8 @@
                    1.5056327351493116e-7])
 
 (defn gamma [z]
-  ;; Returns the value of the gamma function using the Lanczos algorithm.
+  ;; Returns the value of the gamma function using the Lanczos approximation.
+  ;; See https://en.wikipedia.org/wiki/Lanczos_approximation.
   (if (< z 0.5)
     (/ Math/PI (* (gamma (- 1 z)) (Math/sin (* Math/PI z))))
     (*

@@ -3,6 +3,7 @@
             [stats-clj.special :refer [gamma]]))
 
 (deftest gamma-test
+  ;; TODO Tests for z < 0.5 values.
   (testing "gamma(0) = inf"
     (is (= ##Inf (gamma 0))))
   (testing "gamma(n) = (n - 1)!"
