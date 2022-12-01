@@ -1,0 +1,19 @@
+{:paths ["src" "resources"]
+ :deps {org.clojure/clojure {:mvn/version "1.11.1"}}
+ :aliases
+ {:test {:extra-deps {lambdaisland/kaocha {:mvn/version "1.71.1119"}}
+         :extra-paths ["test" "test/resources"]
+         :main-opts ["-m" "kaocha.runner"]}
+  :build {:deps {io.github.seancorfield/build-clj {:git/tag "v0.8.2" :git/sha "0ffdb4c"}}
+          :ns-default build}
+  ;; same as :build but with :extra-deps and :main-opts for Cider.
+  ;; This is only if you want to work on build.clj directly in Emacs/REPL.
+  ;; Run this in shell as `clj -M:build` and then use `cider-connect`
+  ;; - see https://docs.cider.mx/cider/basics/middleware_setup.html#using-tools-deps
+  :build-cider {:deps {io.github.seancorfield/build-clj
+                       {:git/tag "v0.8.2" :git/sha "0ffdb4c"}}
+                :ns-default build
+                :extra-deps {nrepl/nrepl {:mvn/version "1.0.0"}
+                             cider/cider-nrepl {:mvn/version "0.28.7"}
+                             refactor-nrepl/refactor-nrepl {:mvn/version "3.6.0"}}
+                :main-opts ["-m" "nrepl.cmdline" "--middleware" "[refactor-nrepl.middleware/wrap-refactor,cider.nrepl/cider-middleware]"]}}}
