@@ -7,5 +7,5 @@
      (zero? y)
      (< (abs (/ (- x y) x)) precision)
      ))
-  ([x y] (almost-equal? x y 1e-15))
+  ([x y] (almost-equal? x y 1e-10))
   )

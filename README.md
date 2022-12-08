@@ -1,22 +1,24 @@
 # stats-clj
 
-A Clojure library designed to ... well, that part is up to you.
+Clojure library implementing various probability distributions and pseudo random generators.
 
-## Usage
+[![Clojure CI](https://github.com/synesenom/stats-clj/actions/workflows/clojure.yml/badge.svg)](https://github.com/synesenom/stats-clj/actions/workflows/clojure.yml)
+[![CodeScene Code Health](https://codescene.io/projects/32382/status-badges/code-health)](https://codescene.io/projects/32382)
 
-FIXME
 
-## License
+## Documentation
 
-Copyright © 2022 FIXME
+The documentation for `stats-clj` is written as Clerk notebooks.
+To run the notebooks, just start a REPL:
 
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
+```bash
+clj doc/user.clj
+```
 
-This Source Code may also be made available under the following Secondary
-Licenses when the conditions for such availability set forth in the Eclipse
-Public License, v. 2.0 are satisfied: GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or (at your
-option) any later version, with the GNU Classpath Exception which is available
-at https://www.gnu.org/software/classpath/license.html.
+## Development
+
+To start watching the `src` and `test` folders for development, run the following:
+
+```bash
+bin/kaocha --watch
+```
