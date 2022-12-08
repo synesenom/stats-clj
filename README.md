@@ -11,7 +11,7 @@ The documentation for `stats-clj` is written as Clerk notebooks.
 To run the notebooks, just start a REPL:
 
 ```bash
-clj
+clj doc/user.clj
 ```
 
 ## Development
